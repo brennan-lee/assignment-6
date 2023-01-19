@@ -15,15 +15,15 @@ if (navigator.serviceWorker) {
   })
 }
 
-const getImage = async (URLAddress) => {
+const getFact = async (URLAddress) => {
   try {
     const result = await fetch(URLAddress)
     const jsonData = await result.json()
     console.log(jsonData)
-    document.getElementById("api-image").innerHTML = jsonData.image
+    document.getElementById("fact").innerHTML = jsonData.facts
   } catch (err) {
     console.log(err)
   }
 }
 
-getImage("https://api.thecatapi.com/v1/images/search?format=json")
+getImage("https://cat-fact.herokuapp.com")
