@@ -26,4 +26,4 @@ const getFact = async (URLAddress) => {
   }
 }
 
-getImage("https://catfact.ninja/docs/api-docs.json")
+getFact("https://catfact.ninja/docs/api-docs.json")
