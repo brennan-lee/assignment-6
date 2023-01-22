@@ -14,13 +14,14 @@ if (navigator.serviceWorker) {
     scope: "/assignment-6/",
   })
 }
-
 const getFact = async (URLAddress) => {
   try {
     const result = await fetch(URLAddress)
     const jsonData = await result.json()
-    console.log(jsonData)
-    document.getElementById("fact").innerHTML = jsonData.facts
+    console.log(jsonData[0].url)
+    console.log(jsonData[0])
+    document.getElementById("fact").innerHTML = '<img src="' + jsonData[0].url + '" alt="cat-fact" width= 25% height 20%>'
+
   } catch (err) {
     console.log(err)
   }
